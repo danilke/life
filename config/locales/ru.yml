@@ -1,0 +1,10 @@
+ru:
+  page_title: ''
+  page_description: ''
+  page_keywords: ''
+  search: 'Поиск по нику модели'
+  currency:
+    rate: 'czk/мин'
+  chat:
+    free: 'без регистрации'
+    payed_only: 'только платный чат'

@@ -1,0 +1,18 @@
+<h1>Chat</h1>
+
+<ul id="chat">
+	<% @messages = @model.messages%>
+  <%= render @messages %>
+</ul>
+<% if !@model.current_sign_in_ip.nil?%>
+<%= form_for Message.new, remote: true do |f| %>
+
+<%= f.text_field :text%>
+<%=hidden_field_tag 'model_id', @model.id %>
+<%=hidden_field_tag 'user_id', current_user.id %>
+ <%= f.submit%>
+<% end %>
+<%else %>
+<b>model neni online</b>
+<%end%>
+<%= subscribe_to "/messages/new" %>

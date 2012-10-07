@@ -1,0 +1,47 @@
+<% for model in @models do %>
+<div class="item">
+   <div class="content">
+      <div class="name"><%= model.name %></div>
+      <div class="img-wrapper">
+         <div class="img new">
+            <%= link_to (image_tag(model.image_url(:model_thumb).to_s)), "/#{I18n.locale}/models/#{model.id}" %>
+            <% if model.is_new.nil? %>
+            <% else %>
+                <img src="/images/new-star.png" alt="" class="star-new" />
+            <% end %>
+            <% if model.is_online.nil? %>
+            <% else %>
+                <div class="online"><span>Online</span></div>
+            <% end %>
+         </div>
+      </div>
+      <div class="controls">
+         <div class="left"><a href=""><img src="/images/add.png" alt="" /></a></div>
+         <div class="right"><a href=""><img src="/images/mic-on_icon.png" alt="" /></a></div>
+         <div class="right"><a href=""><img src="/images/hd-off_icon.png" alt="" /></a></div>
+         <span class="tide"></span>
+      </div>
+      <div class="offer">
+         <div class="price left">
+            <div class="timed"><%= model.price %></div>
+            <div class="tax"><%= t('currency.rate') %></div>
+            <div class="noreg">
+                <% if model.registration_required.nil? %>
+                    <%= link_to t('chat.free'), "/#{I18n.locale}/models/#{model.id}" %>
+                <% else %>
+                    <%= link_to t('chat.payed_only'), '/', :class => 'registered_only' %>
+                <% end %>
+            </div>
+         </div>
+         <% if model.translation_available.nil? %>
+            <div class="cam right"><%= link_to image_tag("/images/cam-off_icon.png"), :alt => "camera is online" %></div>
+        <% else %>
+            <div class="cam right"><%= link_to image_tag("/images/cam-on_icon.png"), :alt => "camera is online" %></div>
+        <% end %>
+      </div>
+   </div>
+</div>
+<% end %>
+<span class="tide"></span>
+
+<%= paginate @models %>

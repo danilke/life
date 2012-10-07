@@ -1,0 +1,71 @@
+
+.jScrollPaneContainer {
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.jScrollPaneTrack {
+	position: absolute;
+	cursor: pointer;
+	right: 0;
+	top: 0;
+	height: 100%;
+	background: #2d2d2d;
+}
+.jScrollPaneDrag {
+	position: absolute;
+	height: 80px !important;
+	background: -moz-linear-gradient(top, #00befe, #0099fd);
+	background: -webkit-linear-gradient(top, #00befe, #0099fd); /* webkit */
+    background: -o-linear-gradient(top, #00befe, #0099fd); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #00befe, #0099fd); /* IE10 */
+    background: linear-gradient(top, #00befe, #0099fd);
+    border-radius: 10px;
+	cursor: pointer;
+	overflow: hidden;
+}
+.jScrollPaneDragTop {
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+.jScrollPaneDragBottom {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+}
+a.jScrollArrowUp {
+	display: block;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	text-indent: -2000px;
+	overflow: hidden;
+	background: url(/assets/images/pane-arrow-up.png) 0 0 no-repeat;
+	height: 14px;
+}
+a.jScrollArrowUp:hover {
+	/*background-color: #f60;*/
+}
+
+a.jScrollArrowDown {
+	display: block;
+	position: absolute;
+	z-index: 1;
+	bottom: 0;
+	right: 0;
+	text-indent: -2000px;
+	overflow: hidden;
+	background: url(/assets/images/pane-arrow-down.png) 0 0 no-repeat;
+	height: 14px;
+}
+a.jScrollArrowDown:hover {
+	/*background-color: #f60;*/
+}
+a.jScrollActiveArrowButton, a.jScrollActiveArrowButton:hover {
+	/*background-color: #f00;*/
+}

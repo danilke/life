@@ -1,0 +1,5 @@
+<li>
+  <span class="created_at"><%= message.created_at.try(:strftime, "%H:%M") %></span>
+  <%= message.from %>
+  <%= message.text %>
+</li>

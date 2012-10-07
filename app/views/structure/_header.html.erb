@@ -1,0 +1,45 @@
+<div class="head">
+   <div class="logo">
+      <h1><%= link_to '', "/#{I18n.locale}/" %></h1>
+   </div>
+   <div class="lang-change">
+      <ul>
+         <li>
+            <a href="">CZ</a>
+         </li>
+         <li class="active">RU</li>
+         <li>
+            <a href="">EN</a>
+         </li>
+      </ul>
+   </div>
+   <div class="head-menu">
+      <ul>
+         <li><a href="/">онлайн</a></li>
+         <li><a href="/">топ</a></li>
+         <li><a href="/">все</a></li>
+      </ul>
+   </div>
+   <div class="head-menu">
+      <ul>
+         <li><a href="/">видео</a></li>
+         <li><a href="/">блог</a></li>
+      </ul>
+      <a href="/" class="help">Помощь</a>
+   </div>
+   <div class="search-enter-box">
+      <div class="entrance">
+         <a href="" class="enter">ВХОД</a>
+         <a href="" class="men-enter">Мужчинам</a>
+         <a href="" class="girl-enter">Девушкам</a>
+      </div>
+      <div class="search" id="search">
+         <%= form_tag models_path, :method => :get do %>
+               <%= search_field_tag :name, params[:name] %>
+               <%= submit_tag t('search'), :name => nil %>
+         <% end %>
+         <span class="tide"></span>
+      </div>
+   </div>
+   <span class="tide"></span>
+</div>

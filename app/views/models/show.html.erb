@@ -1,0 +1,54 @@
+<div class="chat">
+  <h1><%= @model.name %></h1>
+  <div class="player">
+    <div class="player-window">
+      <img src="/images/player.jpg" alt="">
+    </div>
+    <div class="preferences">
+      <div class="price left grey">
+        <div class="timed white">24</div>
+        <div class="tax">32 руб/мин</div>
+        <div class="noreg">без <a href="/">регистрации</a></div>
+      </div>
+      <div class="links right">
+        <ul>
+          <li class="private"><a href="">приват</a></li>
+          <li class="present"><a href="">подарок</a></li>
+          <li class="games"><a href="">игры</a></li>
+          <li class="discount"><a href="">скидка</a></li>
+        </ul>
+      </div>
+      <span class="tide"></span>
+    </div>
+  </div>
+  <div class="talk">
+    <%= render :partial => 'messages/index.html.erb' %>
+    <span class="tide"></span>
+  </div>
+</div>
+  <div class="profile">
+    <div class="image">
+      <%= image_tag(@model.image_url(:model_thumb).to_s) %>
+    </div>
+    <div class="about">
+      <h2>О себе</h2>
+      <p>19 лет</p>
+      <p>82-56-90</p>
+      <p>165 см</p>
+      <p>Глаза карие</p>
+    </div>
+    <div class="prefers">
+      <h3>Люблю</h3>
+      <p>Слушать музыку, решать кроссворды, вышивать, рисовать, ходить по магазинам и позировать перед камерой.</p>
+      <h3>Не люблю</h3>
+      <p>Готовить, мыть посуду, убираться, зиму и холод</p>
+    </div>
+    <div class="album">
+      <a href="" class="video">3 видеозаписи</a>
+      <a href="" class="photo">132 фото</a>
+    </div>
+    <div class="present">
+      <a href=""><img src="assets/images/content/present.jpg" alt=""></a>
+    </div>
+    <span class="tide"></span>
+  </div>

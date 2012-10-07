@@ -1,0 +1,13 @@
+<% @pages = Page.all(:conditions => "display_in_submenu = '1'") %>
+<nav>
+	<div class="menu">
+		<ul>
+			<% for page in @pages do %>
+				<li>
+					<%= link_to page.title, "/#{I18n.locale}/pages/#{page.id}" %>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+	<span class="tide"></span>
+</nav>
